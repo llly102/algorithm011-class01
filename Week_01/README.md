@@ -4,7 +4,7 @@
 3. 在面试时，设置测试用例。
 4. 一道题做五遍。对比别人的优秀解法和代码，进行记忆理解，并自己写出代码。
 5. 使用自顶向下的编程方式，以高层次主干逻辑为主。
-6. 熟练IDE使用技巧。
+6. 熟练IDE使用技巧。   
     ①Fn + ←/→   home/end 键   
     ②CTRL+D   复制行    
     ③CTRL+X   剪切,删除行   
@@ -32,15 +32,11 @@
 ### 4 栈与队列
 1. 栈（Stack）：先入后出，插入删除都是O(1)。
 操作：
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200628191044868.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
 2. 队列（Queue）：先入先出，插入删除都是O(1)。
 操作：
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200628191123820.jpg#pic_center)
 3. 双端队列（Deque）：两端都可以进行插入和删除，分为First端和Last端。
-操作：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200628191206343.jpg#pic_center)
-
+操作：![在这里插入图片描述](https://img-blog.csdnimg.cn/20200628191206343.jpg#pic_center)
 4. 优先队列（Priority Queue）：元素按照优先级进行存储。插入操作：O(1)，删除操作：O(logn)。
 5. 要熟悉栈和队列的API的使用方法。分析源码，理解实现过程。
