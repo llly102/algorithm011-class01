@@ -176,85 +176,99 @@ public V put(K key, V value) {
     }
 ```
 2. TreeMap通过红黑树来实现   
-### 树、二叉树和二叉搜索树   
-1.	树   
-不同于链表中的结点，树的结点定义中可能有多个next指针。  
-树中是没有环的，图中是有环的。   
-链表是特殊化的树；树是特殊化的图。   
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160658485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
-2.	二叉树
+### 树、二叉树和二叉搜索树      
+1.	树      
+不同于链表中的结点，树的结点定义中可能有多个next指针。     
+树中是没有环的，图中是有环的。       
+链表是特殊化的树；树是特殊化的图。         
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160658485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
+
+2.	二叉树     
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160710468.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
-3.	二叉树结点定义
+
+3.	二叉树结点定义         
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020070516072422.png)
- 4.	树的遍历：
-前序（pre-order）:根-左-右
-中序（in-order）：左-根-右
-后序（post-order）：左-右-根   
+ 
+ 4.	树的遍历：     
+前序（pre-order）:根-左-右                  
+中序（in-order）：左-根-右              
+后序（post-order）：左-右-根               
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160732241.png)
-5.	二叉搜索树，又称二叉排序树、有序二叉树、排序二叉树，是指一棵空树或者具有以下性质的二叉树：   
-①	左子树上所有结点的值均小于它的根结点的值；   
-②	右子树上所有结点的值均大于它的根结点的值。   
-③	以此类推，左、右子树也分别为二叉搜索树。（重复性）   
-它的中序遍历是升序排列（可以借此来检查一个二叉树是否为二叉搜索树）。  
-查询、插入和删除操作的时间复杂度都是O(logn)。  
-删除操作：①删除叶子结点 ②其他结点：找删除结点的比它大的最近的那个结点替上去。   
-6.	时间复杂度
+ 
+5.	二叉搜索树，又称二叉排序树、有序二叉树、排序二叉树，是指一棵空树或者具有以下性质的二叉树：                        
+①	左子树上所有结点的值均小于它的根结点的值；                         
+②	右子树上所有结点的值均大于它的根结点的值。                    
+③	以此类推，左、右子树也分别为二叉搜索树。（重复性）                   
+它的中序遍历是升序排列（可以借此来检查一个二叉树是否为二叉搜索树）。               
+查询、插入和删除操作的时间复杂度都是O(logn)。                     
+删除操作：①删除叶子结点 ②其他结点：找删除结点的比它大的最近的那个结点替上去。                   
+6.	时间复杂度                    
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160746467.png)
+
 二叉搜索树的最坏情况：全部只有左子树或者只有右子树，这样就退化成了链表，查询、插入和删除操作时间复杂度变为O(n)。要进行平衡二叉树。
-7.	树的解法一般用递归：递归的本质是自身的重复，树和树中的子树的结构一致，根结点-左子树-右子树，这样的一种重复。树的定义就是采用递归的方式，所以关于树的问题一般采用递归。
-### 堆Heap
-1. （1） Heap：可以快速找到一堆数中的最大值或者最小值的数据结构。
-将根节点最大的堆叫做大顶堆或大根堆，根结点最小的堆叫做小顶堆或小根堆。
-（2）常见的堆有二叉堆、斐波那契堆。
-（3）大顶堆的常见操作（API）：
-①find-max:O(1)
-② delete-max: O(logn)
-③ insert(creat): O(logn)或O(1)（斐波那契堆）
-2.  二叉堆BinaryHeap
-二叉堆是堆的一种常见且简单的实现，调用PriorityQueue。
-（1）二叉堆性质：通过完全二叉树来实现（不是二叉搜索树）。
-二叉堆（大顶堆）满足以下性质：
-①是一棵完全树
-②树中任意节点的值总是大于等于其子节点的值
+             
+7. 树的解法一般用递归：递归的本质是自身的重复，树和树中的子树的结构一致，根结点-左子树-右子树，这样的一种重复。树的定义就是采用递归的方式，所以关于树的问题一般采用递归。               
+### 堆Heap                       
+1. （1） Heap：可以快速找到一堆数中的最大值或者最小值的数据结构。                      
+将根节点最大的堆叫做大顶堆或大根堆，根结点最小的堆叫做小顶堆或小根堆。                  
+（2）常见的堆有二叉堆、斐波那契堆。                
+（3）大顶堆的常见操作（API）：               
+①find-max:O(1)                 
+② delete-max: O(logn)               
+③ insert(creat): O(logn)或O(1)（斐波那契堆）               
+2.  二叉堆BinaryHeap               
+二叉堆是堆的一种常见且简单的实现，调用PriorityQueue。                      
+（1）二叉堆性质：通过完全二叉树来实现（不是二叉搜索树）。                    
+二叉堆（大顶堆）满足以下性质：                 
+①是一棵完全树                       
+②树中任意节点的值总是大于等于其子节点的值                 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161402185.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
-（2）二叉堆的实现细节
-1.通过数组实现。
-2.假设第一个元素在数组中的索引为0，即a[0],则
-①	索引为i的结点的左孩子结点的索引为2*i+1;
-②	索引为i的结点的右孩子结点的索引为2*i+2
-③	索引为i的结点的父节点的索引为floor(i-1)/2)
-（3）Insert插入操作
-①	新元素先插入到堆的尾部。
-②	依次向上调整整个堆的结构，通过HeapifyUp。
-新节点插入到尾部之后，将结点和它的父节点进行比较，如果大于，就把这个节点和父节点进行交换，直到不再大于。
-（4）DeleteMax删除堆顶操作
-①	将堆尾元素替换到顶部（即堆顶被替换删除掉）
-②	一次从根部向下调整整个堆的结构（一直到堆尾为止）
-使用函数HeapifyDown
-堆尾元素替换到顶部之后，将其和它的左右孩子进行比较，和较大的那个进行交换，直到不再小于。
-### 图
-1.	图
-(1)	图的属性Graph(V,E)：
-①V-vertex：点
-a)	度-出度和入度
-b)	点与点之间：连通与否
-②E-edge：边 
-c)	有向和无向
-d)	权重（边长）
-(2)	图的表示和分类
-表示方法：邻接矩阵和邻接表
-无向无权图：
+
+（2）二叉堆的实现细节                               
+1.通过数组实现。                           
+2.假设第一个元素在数组中的索引为0，即a[0],则                             
+①	索引为i的结点的左孩子结点的索引为2*i+1;                       
+②	索引为i的结点的右孩子结点的索引为2*i+2                      
+③	索引为i的结点的父节点的索引为floor(i-1)/2)                    
+（3）Insert插入操作                    
+①	新元素先插入到堆的尾部。                   
+②	依次向上调整整个堆的结构，通过HeapifyUp。                      
+新节点插入到尾部之后，将结点和它的父节点进行比较，如果大于，就把这个节点和父节点进行交换，直到不再大于。                       
+（4）DeleteMax删除堆顶操作                    
+①	将堆尾元素替换到顶部（即堆顶被替换删除掉）                           
+②	一次从根部向下调整整个堆的结构（一直到堆尾为止）                                  
+使用函数HeapifyDown                             
+堆尾元素替换到顶部之后，将其和它的左右孩子进行比较，和较大的那个进行交换，直到不再小于。                           
+### 图                         
+1.	图                              
+(1)	图的属性Graph(V,E)：                  
+①V-vertex：点                           
+a)	度-出度和入度                          
+b)	点与点之间：连通与否                        
+②E-edge：边                       
+c)	有向和无向                         
+d)	权重（边长）                       
+(2)	图的表示和分类                         
+表示方法：邻接矩阵和邻接表                   
+无向无权图：                      
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162046635.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
-有向无权图：
+ 
+有向无权图：                              
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162103379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
-无向有权图：
+ 
+无向有权图：                                   
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162117765.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
-有向有权图：
+ 
+有向有权图：                          
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162804592.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
-(3)	基于图的常见算法
-①	 DFS-递归写法
-注意有visited ，因为图中可能会有环路，看结点是否被访问过。
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161600477.png)
-②	BFS代码
+     
+(3)	基于图的常见算法                    
+①	 DFS-递归写法                          
+注意有visited ，因为图中可能会有环路，看结点是否被访问过。             
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161600477.png)              
+ 
+②	BFS代码                   
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161606259.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
+
 
