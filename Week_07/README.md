@@ -1,6 +1,6 @@
-## 字典树和并查集
+# 字典树和并查集
 
-### 字典树Trie
+## 字典树Trie
 
 适用场景：词频的感应和根据前缀推后面
 
@@ -119,7 +119,7 @@ class Trie {
 class TrieNode {
     public TrieNode[] children;
     public String word;
-    boolean isEnd;
+    //boolean isEnd;
     public TrieNode(){
         children = new TrieNode[26];
         word = null;
@@ -185,7 +185,7 @@ class Solution {
         //标记该位置已经访问过
         char temp = board[i][j];
         board[i][j] = '#';
-        //成功找到，加入到结果中
+        //成功找到，加入到结果中,同时将cur.word置为null，避免重复
         if(cur.word!=null){
             res.add(cur.word);
             cur.word = null;
@@ -404,7 +404,7 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 
 ### 剪枝
 
-剪去不成立的情况或者次优得到情况。
+剪去不成立的情况或者次优的情况。
 
 #### 例题：解数独（力扣37）
 

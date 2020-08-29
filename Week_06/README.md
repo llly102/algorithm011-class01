@@ -1,5 +1,5 @@
-### 递归、分治和动态规划                          
-#### 递归                             
+# 递归、分治和动态规划                          
+## 递归                             
 递归代码模板                                 
 
 ```java
@@ -18,7 +18,7 @@ public void recur(int level, int param) {
 }
 ```
 把大问题分解成子问题                                              ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200731191704728.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
-#### 分治                     
+## 分治                     
 代码模板                         
 
 ```java
@@ -42,26 +42,27 @@ private static int divide_conquer(Problem problem,param1,param2,…… ) {
 }
 
 ```
-#### 注意                                                                 
+## 注意                                                                 
 1. 避免人肉递归。                                                       
 2. 找到最近最简方法，将其拆解成可重复解决的问题。                                                                 
 3. 数学归纳法思维。                                                        
 4. 寻找重复性。                   
 5. 当遇到不熟悉的递归问题时，可以画一下递归树便于理解。                                                 
 
-#### 动态规划（Dynamic Programming）                       
+## 动态规划（Dynamic Programming）                       
 动态规划：分治+最优子结构                                        
 在每一步中只存储最优的结果，淘汰次优解。                      
-##### 关键点                                  
+
+### 关键点                                  
 1. 动态规划和递归、分治没有根本上的区别（关键看有没有最优子结构）。                      
 2. 共性：找到重复子问题。                               
 3. 差异性：最优子结构、中途可以淘汰次优解。                        
 寻找动态规划方程。  
-##### 动态规划：状态转移方程                           
+### 动态规划：状态转移方程                           
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200801123917554.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
                                                            
-#### 例题                       
-##### Fibonacci数列                      
+### 例题                       
+#### Fibonacci数列                      
 不进行缓存的递归时间复杂度是指数级的（每次用到都要去递归算一次）。O(2^n)                              
 
 ```java
@@ -80,7 +81,7 @@ int fib(int n){
     if(n<=1){
         return n;
     }
-    if(mem[n] == 0){
+    if(memo[n] == 0){
         memo[n]=fib(n-1) + fib(n-2);
     }
     return memo[n];
@@ -103,13 +104,13 @@ int fib(int n){
 }
 
 ```
-##### 路径计数                            
+#### 路径计数                            
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020073122224543.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
  划分成子问题                              
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020073122242268.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
 动态规划：状态转移方程：dp[i,j]=dp[i+1,j]+dp[i,j+1]                            
 
-##### 最长公共子序列（力扣1143）
+#### 最长公共子序列（力扣1143）
 
 ![](C:\Users\LY\Documents\360截图\360截图20200801172857755.jpg)
 
@@ -121,7 +122,7 @@ int fib(int n){
 
 
 
-##### 三角形最小路径和（力扣120）
+#### 三角形最小路径和（力扣120）
 
 a. 找重复性（分治）。problem(i,j)=sub(i,j)+min(sub(i+1,j) , sub(i,j+1))
 
@@ -147,7 +148,7 @@ class Solution {
 }
 ```
 
-##### 最大子序列和（力扣53）
+#### 最大子序列和（力扣53）
 
 ![](C:\Users\LY\Documents\360截图\360截图20200802155206347.jpg)
 
@@ -182,7 +183,7 @@ class Solution {
 }
 ```
 
-##### 零钱兑换（力扣322）
+#### 零钱兑换（力扣322）
 
 ![](C:\Users\LY\Documents\360截图\360截图20200802161957759.jpg)
 
@@ -224,7 +225,7 @@ class Solution {
 }
 ```
 
-##### 打家劫舍（力扣198）
+#### 打家劫舍（力扣198）
 
 ![](C:\Users\LY\Documents\360截图\360截图20200802173609527.jpg)
 
@@ -292,7 +293,7 @@ class Solution {
 
 
 
-#### 小结
+### 小结
 
 1. 打破思维惯性，形成机器思维：找重复性。
 

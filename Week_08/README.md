@@ -478,6 +478,7 @@ static int partition(int[] a, int begin, int end) {
             counter++;
         }
     }
+    //此时count是第一个大于pivot元素的位置，交换pivot和count位置上的元素，即可得到左边都小于pivot，右边都大于pivot
     int temp = a[pivot]; a[pivot] = a[counter]; a[counter] = temp;
     return counter;
 }
@@ -515,7 +516,7 @@ public static void merge(int[] arr, int left, int mid, int right) {
             arr[left + p] = temp[p];
         }
         // 也可以用 System.arraycopy(a, start1, b, start2, length)
-    }
+}
 ```
 
 ![image-20200815154659507](C:\Users\LY\AppData\Roaming\Typora\typora-user-images\image-20200815154659507.png)

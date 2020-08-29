@@ -126,7 +126,7 @@ public V put(K key, V value) {
         //1.如果table为空或者length为0，则调用resize扩容
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
-        //2.根据Key的hash值得到插入的数组索引i,如果table[i]为空，直接直接新建结点进行插入即可
+        //2.根据Key的hash值得到插入的数组索引i,如果table[i]为空，直接新建结点进行插入即可
         if ((p = tab[i = (n - 1) & hash]) == null)
             tab[i] = newNode(hash, key, value, null);
         //如果table[i]不为空
@@ -188,13 +188,13 @@ public V put(K key, V value) {
 
 3.	二叉树结点定义         
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020070516072422.png)
- 
+
  4.	树的遍历：     
 前序（pre-order）:根-左-右                  
 中序（in-order）：左-根-右              
 后序（post-order）：左-右-根               
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705160732241.png)
- 
+
 5.	二叉搜索树，又称二叉排序树、有序二叉树、排序二叉树，是指一棵空树或者具有以下性质的二叉树：                        
 ①	左子树上所有结点的值均小于它的根结点的值；                         
 ②	右子树上所有结点的值均大于它的根结点的值。                    
@@ -229,16 +229,17 @@ public V put(K key, V value) {
 2.假设第一个元素在数组中的索引为0，即a[0],则                             
 ①	索引为i的结点的左孩子结点的索引为2*i+1;                       
 ②	索引为i的结点的右孩子结点的索引为2*i+2                      
-③	索引为i的结点的父节点的索引为floor(i-1)/2)                    
+③	索引为i的结点的父节点的索引为floor((i-1)/2)                    
 （3）Insert插入操作                    
 ①	新元素先插入到堆的尾部。                   
 ②	依次向上调整整个堆的结构，通过HeapifyUp。                      
 新节点插入到尾部之后，将结点和它的父节点进行比较，如果大于，就把这个节点和父节点进行交换，直到不再大于。                       
 （4）DeleteMax删除堆顶操作                    
 ①	将堆尾元素替换到顶部（即堆顶被替换删除掉）                           
-②	一次从根部向下调整整个堆的结构（一直到堆尾为止）                                  
+②	从根部向下调整整个堆的结构（一直到堆尾为止）                                  
 使用函数HeapifyDown                             
 堆尾元素替换到顶部之后，将其和它的左右孩子进行比较，和较大的那个进行交换，直到不再小于。                           
+
 ### 图                         
 1.	图                              
 (1)	图的属性Graph(V,E)：                  
@@ -252,13 +253,13 @@ d)	权重（边长）
 表示方法：邻接矩阵和邻接表                   
 无向无权图：                      
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162046635.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
- 
+
 有向无权图：                              
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162103379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
- 
+
 无向有权图：                                   
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162117765.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
- 
+
 有向有权图：                          
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705162804592.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70#pic_center)
@@ -267,7 +268,7 @@ d)	权重（边长）
 ①	 DFS-递归写法                          
 注意有visited ，因为图中可能会有环路，看结点是否被访问过。             
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161600477.png)              
- 
+
 ②	BFS代码                   
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200705161606259.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1Mjg0OQ==,size_16,color_FFFFFF,t_70)
 
